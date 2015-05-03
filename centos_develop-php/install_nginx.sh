@@ -23,7 +23,7 @@ server {
 ' > /usr/local/nginx/conf/vhost/default.conf
 
 echo '
-user  root;
+user  root; #记得更改
 worker_processes  1;
 #pid        logs/nginx.pid;
 events {
