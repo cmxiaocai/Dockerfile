@@ -13,20 +13,22 @@ RUN /data/install/install_nginx.sh
 ADD ./package/php-5.4.40.tar.gz /data/install/
 ADD ./package/libiconv-1.14.tar.gz /data/install/
 ADD ./package/libmcrypt-2.5.8.tar.gz /data/install/
-ADD ./package/yaf-2.3.3.tgz /data/install/
-ADD ./package/phpredis-develop.tar.gz /data/install/
 ADD ./install_php.sh /data/install/install_php.sh
 RUN chmod 755 /data/install/install_php.sh
 RUN /data/install/install_php.sh
+
+#install php-extensions
+ADD ./package/yaf-2.3.3.tgz /data/install/
+ADD ./package/phpredis-develop.tar.gz /data/install/
+ADD ./install_php-extensions.sh /data/install/install_php-extensions.sh
+RUN chmod 755 /data/install/install_php-extensions.sh
+RUN /data/install/install_php-extensions.sh
 
 #
 #RUN /etc/init.d/iptables stop
 #RUN /etc/init.d/nginx start
 #RUN /etc/init.d/php-fpm start
-RUN rm -rf /data/install/php-5.4.40
-RUN rm -rf /data/install/nginx-1.5.7
-RUN rm -rf /data/install/libiconv-1.14
-RUN rm -rf /data/install/libmcrypt-2.5.8
+RUN rm -rf /data/install/*
 
 EXPOSE 80
 
