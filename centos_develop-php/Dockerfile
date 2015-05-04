@@ -20,6 +20,7 @@ RUN /data/install/install_php.sh
 #install php-extensions
 ADD ./package/yaf-2.3.3.tgz /data/install/
 ADD ./package/phpredis-develop.tar.gz /data/install/
+ADD ./package/mongo-1.6.7.tgz /data/install/
 ADD ./install_php-extensions.sh /data/install/install_php-extensions.sh
 RUN chmod 755 /data/install/install_php-extensions.sh
 RUN /data/install/install_php-extensions.sh

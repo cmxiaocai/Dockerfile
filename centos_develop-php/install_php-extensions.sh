@@ -28,6 +28,15 @@ echo '[redis]
 extension = redis.so
 ' > /usr/local/php-5.4.40/etc/ext/redis.ini
 
+#install mongo
+cd /data/install/mongo-1.6.7/
+/usr/local/php-5.4.40/bin/phpize
+./configure --with-php-config=/usr/local/php-5.4.40/bin/php-config
+make && make install
+echo '[mongo]
+extension = mongo.so
+' > /usr/local/php-5.4.40/etc/ext/mongo.ini
+
 /usr/local/php-5.4.40/bin/php -m
 
 echo 'install php-extension successfully';
