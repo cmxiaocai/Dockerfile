@@ -47,6 +47,7 @@ make install
 
 cp php.ini-development /usr/local/php-5.4.40/etc/php.ini
 sed -i "s/;date.timezone =/date.timezone = \"Asia\/Shanghai\"/g" /usr/local/php-5.4.40/etc/php.ini
+sed -i "s/;error_log = syslog/error_log = \/data\/log\/php_errors.log/g" /usr/local/php-5.4.40/etc/php.ini
 
 cp /usr/local/php-5.4.40/etc/php-fpm.conf.default /usr/local/php-5.4.40/etc/php-fpm.conf
 cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
