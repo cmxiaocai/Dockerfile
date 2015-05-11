@@ -16,6 +16,14 @@ server {
         index index.html index.htm;
         root /data/www/;
     }
+	
+	location ~ \.php$ {
+		root /data/www/;
+		fastcgi_pass  127.0.0.1:9000;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME /data/www/$fastcgi_script_name;
+		include       fastcgi_params;
+	}
 
     access_log /data/log/ng.access.log;
     error_log /data/log/ng.error.log;
