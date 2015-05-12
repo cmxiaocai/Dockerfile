@@ -35,4 +35,11 @@ cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
 chkconfig mysql on
 /etc/init.d/mysql start
 
-echo '#_#'
+echo "PATH=/usr/local/mysql/bin:$PATH
+export PATH">>/etc/profile
+source /etc/profile
+
+mysqladmin -u root password xiaocai
+mysql -uroot -pxiaocai -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'*' IDENTIFIED BY 'xiaocai' WITH GRANT OPTION;"
+
+echo 'successfully.'
