@@ -3,7 +3,7 @@ FROM centos_base
 MAINTAINER xiaocai <miss339742811@163.com>
 
 #
-RUN yum -y install ncurses-devel cmake
+#RUN yum -y install ncurses-devel cmake
 
 #install mysql
 ADD ./package/mysql-5.5.42.tar.gz /data/install
