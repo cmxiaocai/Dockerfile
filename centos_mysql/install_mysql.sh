@@ -47,4 +47,4 @@ mysql -uroot -pxiaocai -e "FLUSH PRIVILEGES;"
 
 netstat -an | grep LISTEN | grep 3306
 
-echo 'successfully.'
+echo 'install mysql successfully.'

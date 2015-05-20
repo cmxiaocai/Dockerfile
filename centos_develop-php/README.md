@@ -13,3 +13,4 @@ PHP开发环境镜像
     docker build -t centos_nginx .
     docker run --net=host -i -t -p 8080:80 -v /data/wwwroot:/data/www centos_nginx /bin/bash
 --
+ 

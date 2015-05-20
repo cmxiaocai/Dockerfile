@@ -2,6 +2,10 @@
 FROM centos_base
 MAINTAINER xiaocai <miss339742811@163.com>
 
+#add user
+#RUN groupadd worker
+#RUN useradd -g worker worker
+
 #install nginx
 ADD ./package/nginx-1.5.7.tar.gz /data/install/
 ADD ./install_nginx.sh /data/install/install_nginx.sh
@@ -31,6 +35,7 @@ RUN /data/install/install_php-extensions.sh
 #RUN /etc/init.d/php-fpm start
 RUN rm -rf /data/install/*
 
+#USER worker
 EXPOSE 80
 
 #CMD ["/etc/init.d/iptables stop","/etc/init.d/nginx start"]
