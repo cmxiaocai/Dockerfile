@@ -41,7 +41,7 @@ yaf开发环境,需要先创建centos_nginx基础镜像
 
 --
     docker build -t centos_yaf .
-    docker run --net=host -i -t -v /data/wwwroot/github_yaf-phpframe/:/data/www centos_yaf
+    docker run --net=host -i -t -p 8080:80 -v /data/wwwroot/github_yaf-phpframe/:/data/www centos_yaf
 --
 
 centos_mysql

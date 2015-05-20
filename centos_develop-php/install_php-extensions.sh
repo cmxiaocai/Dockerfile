@@ -11,11 +11,11 @@ echo '[yaf]
 extension = yaf.so
 yaf.environ=local
 yaf.cache_config=0
-yaf.name_suffix=0
-yaf.name_separator="_"
+yaf.name_suffix=1
+yaf.name_separator=""
 yaf.forward_limit=5
 yaf.use_namespace=1
-yaf.use_spl_autoload=1
+yaf.use_spl_autoload=0
 yaf.lowcase_path=1
 ' > /usr/local/php-5.4.40/etc/ext/yaf.ini
 
