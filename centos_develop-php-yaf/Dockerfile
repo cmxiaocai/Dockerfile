@@ -5,6 +5,8 @@ MAINTAINER xiaocai <miss339742811@163.com>
 RUN groupadd worker
 RUN useradd -g worker worker
 
+RUN yum -y install git
+
 #install nginx
 ADD ./configure_nginx.sh /data/install/configure_nginx.sh
 ADD ./package/composer.phar /data/install/composer.phar
@@ -15,6 +17,7 @@ RUN rm -rf /data/install/
 
 RUN echo "alias php=/usr/local/php-5.4.40/bin/php" >> ~/.bash_profile
 RUN echo "alias composer=/data/install/composer.phar" >> ~/.bash_profile
+RUN echo "alias phpunit-bootstrap='/usr/local/php-5.4.40/bin/php /data/www/vendor/phpunit/phpunit/phpunit --bootstrap /data/www/test/bootstrap.php'" >> ~/.bash_profile
 RUN echo "export PATH=/usr/local/php-5.4.40/bin:$PATH" >> ~/.bash_profile
 RUN source ~/.bash_profile
 
