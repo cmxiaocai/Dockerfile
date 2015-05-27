@@ -14,6 +14,6 @@ RUN /data/install/install_mysql.sh
 
 #RUN groupadd mysql
 #RUN useradd -g mysql mysql
-USER mysql
+#USER mysql
 
 EXPOSE 3306
