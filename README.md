@@ -51,5 +51,8 @@ yaf开发环境,需要先创建centos_nginx基础镜像
 
 --
     docker build -t centos_mysql .
-    docker run --net=host -i -t -p 3306:3306 centos_mysql
+    docker run --net=host -i -t centos_mysql
+
+    /usr/local/mysql/bin/mysql -uroot -pxiaocai
+    show databases;
 --

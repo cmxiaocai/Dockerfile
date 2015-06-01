@@ -42,7 +42,8 @@ export PATH">>/etc/profile
 source /etc/profile
 
 mysqladmin -u root password xiaocai
-mysql -uroot -pxiaocai -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'*' IDENTIFIED BY 'xiaocai' WITH GRANT OPTION;"
+mysql -uroot -pxiaocai -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'xiaocai' WITH GRANT OPTION;"
+# update user set host='%' where user='root' and host='localhost';
 mysql -uroot -pxiaocai -e "FLUSH PRIVILEGES;"
 
 netstat -an | grep LISTEN | grep 3306
