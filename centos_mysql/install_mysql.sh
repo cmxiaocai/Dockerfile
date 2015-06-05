@@ -37,6 +37,8 @@ cp support-files/my-small.cnf /usr/local/mysql/etc/my.cnf
 chkconfig mysql on
 /etc/init.d/mysql start
 
+echo "/etc/init.d/mysql start">>/etc/rc.local
+
 echo "PATH=/usr/local/mysql/bin:$PATH
 export PATH">>/etc/profile
 source /etc/profile

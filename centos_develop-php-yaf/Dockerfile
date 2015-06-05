@@ -19,9 +19,10 @@ RUN echo "alias php=/usr/local/php-5.4.40/bin/php" >> ~/.bash_profile
 RUN echo "alias composer=/data/install/composer.phar" >> ~/.bash_profile
 RUN echo "alias phpunit-bootstrap='/usr/local/php-5.4.40/bin/php /data/www/vendor/phpunit/phpunit/phpunit --bootstrap /data/www/test/bootstrap.php'" >> ~/.bash_profile
 RUN echo "export PATH=/usr/local/php-5.4.40/bin:$PATH" >> ~/.bash_profile
-RUN source ~/.bash_profile
+#RUN source ~/.bash_profile
+RUN echo "/etc/init.d/nginx start" >> /etc/rc.local
+RUN echo "/etc/init.d/php-fpm start" >> /etc/rc.local
+RUN echo "source ~/.bash_profile" >> /etc/rc.local
 
 USER worker
 EXPOSE 80
-
-CMD ["/etc/init.d/php-fpm start","/etc/init.d/nginx start"]
