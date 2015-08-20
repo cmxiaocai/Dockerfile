@@ -29,13 +29,11 @@ ADD ./install_php-extensions.sh /data/install/install_php-extensions.sh
 RUN chmod 755 /data/install/install_php-extensions.sh
 RUN /data/install/install_php-extensions.sh
 
-#
-#RUN /etc/init.d/iptables stop
-#RUN /etc/init.d/nginx start
-#RUN /etc/init.d/php-fpm start
+#start.sh
+ADD ./start.sh /data/start.sh
+RUN chmod 755 /data/start.sh
+
 RUN rm -rf /data/install/*
 
-#USER worker
+ENTRYPOINT ["/data/start.sh"]
 EXPOSE 80
-
-#CMD ["/etc/init.d/iptables stop","/etc/init.d/nginx start"]

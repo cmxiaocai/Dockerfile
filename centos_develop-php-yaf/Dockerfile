@@ -24,5 +24,11 @@ RUN echo "/etc/init.d/nginx start" >> /etc/rc.local
 RUN echo "/etc/init.d/php-fpm start" >> /etc/rc.local
 RUN echo "source ~/.bash_profile" >> /etc/rc.local
 
+#start.sh
+ADD ./start.sh /data/start.sh
+RUN chmod 755 /data/start.sh
+
 USER worker
+
+ENTRYPOINT ["/data/start.sh"]
 EXPOSE 80
