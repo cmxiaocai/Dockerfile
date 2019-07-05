@@ -1,6 +1,6 @@
-#
 FROM centos_nginx
-MAINTAINER xiaocai <miss339742811@163.com>
+
+MAINTAINER xiaocai <cmxiaocai@163.com>
 
 RUN groupadd worker
 RUN useradd -g worker worker
